@@ -125,6 +125,8 @@ in
           # on. The service then needs to be ordered to run after this device
           # is available.
           requires = lib.mkIf (initrdCfg.device != null) [ deviceUnit ];
+          path = [ pkgs.util-linux ];
+          overrideStrategy = "asDropin";
           after =
             if initrdCfg.device == null then
               [ "sysroot.mount" ]
