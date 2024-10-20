@@ -9,10 +9,10 @@ buildGoModule rec {
   version = "0.10.0-beta.3";
 
   src = fetchFromGitHub {
-    owner = "bitmagnet-io";
+    owner = "gileri";
     repo = "bitmagnet";
-    rev = "v${version}";
-    hash = "sha256-rmQKVRm8n+E0bCnuAT6jDYj5Dw9oDSRmaH3+EjM52tw=";
+    rev = "fix-budget-subquery";
+    hash = "sha256-mANu/+B70FxYwo482O/jmzhP9HTZW7CbT7txD7archY=";
   };
 
   vendorHash = "sha256-anQFAJeYrYyuVGq9nCy7v2cJSvU9l/edqOfqf2LS8H8=";
