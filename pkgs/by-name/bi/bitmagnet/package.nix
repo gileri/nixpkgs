@@ -1,21 +1,21 @@
 { lib
-, buildGo122Module  # builds, but does not start on 1.23
+, buildGoModule
 , fetchFromGitHub
 , nix-update-script
 }:
 
-buildGo122Module rec {
+buildGoModule rec {
   pname = "bitmagnet";
-  version = "0.9.5";
+  version = "0.10.0-beta.3";
 
   src = fetchFromGitHub {
     owner = "bitmagnet-io";
     repo = "bitmagnet";
     rev = "v${version}";
-    hash = "sha256-so9GD9hyGfuqqYq61OD1WJXba22cR4msOPp1wLI5vAU=";
+    hash = "sha256-rmQKVRm8n+E0bCnuAT6jDYj5Dw9oDSRmaH3+EjM52tw=";
   };
 
-  vendorHash = "sha256-aauXgHPZbSiTW9utuHXzJr7GsWs/2aFiGuukA/B9BRc=";
+  vendorHash = "sha256-anQFAJeYrYyuVGq9nCy7v2cJSvU9l/edqOfqf2LS8H8=";
 
   ldflags = [ "-s" "-w" "-X github.com/bitmagnet-io/bitmagnet/internal/version.GitTag=v${version}" ];
 
